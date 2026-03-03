@@ -8,7 +8,7 @@ const Navbar = ({
   toggleDarkMode: () => void;
 }) => {
   return (
-    <nav className="w-full h-16 bg-zinc-400 dark:bg-zinc-900 flex items-center justify-between p-6">
+    <nav className="w-full h-16 sticky top-0 bg-zinc-400 dark:bg-zinc-900 flex items-center justify-between p-6">
       <h1 className="text-xl font-bold text-black dark:text-white">Navbar</h1>
       <div className="bg-zinc-400 dark:bg-zinc-900">
         <div className="bg-transparent p-2 rounded-xl gap-2 flex items-center">
