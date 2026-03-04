@@ -8,9 +8,9 @@ const Navbar = ({
   toggleDarkMode: () => void;
 }) => {
   return (
-    <nav className="w-full h-16 sticky top-0 bg-zinc-400 dark:bg-zinc-900 flex items-center justify-between p-6">
-      <h1 className="text-3xl font-bold text-black jetbrains-mono dark:text-white">
-        Insc<span className="text-[#a57f15] dark:text-[#c9a84c]">X</span> //
+    <nav className="w-full h-24 sticky top-0 bg-zinc-200 dark:bg-transparent flex items-center justify-between p-6">
+      <h1 className="text-sm font-mono mx-4 uppercasejetbrains-mono text-black dark:text-[#c9a84c]">
+        Insc<span className="">X</span> // Junior Full-Stack
       </h1>
       <div className="flex flex-row gap-4">
         <a
@@ -38,8 +38,8 @@ const Navbar = ({
           Contact
         </a>
       </div>
-      <div className="bg-zinc-400 dark:bg-zinc-900">
-        <div className="bg-transparent p-2 rounded-xl gap-2 flex items-center">
+      <div className="bg-zinc-300 dark:bg-zinc-900 rounded-lg">
+        <div className="bg-transparent rounded-xl gap-2 flex">
           <button
             className="bg-transparent p-3 hover:bg-zinc-500/20 dark:hover:bg-zinc-700 jetbrains-mono dark:text-white dark:hover:text-white/80 rounded-lg text-black"
             onClick={toggleDarkMode}

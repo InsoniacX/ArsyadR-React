@@ -3,7 +3,7 @@ import Hero from "../assets/download.jpg";
 const Homepage = () => {
   return (
     <section className="flex-1 bg-[#fafafc] dark:bg-[#0a0a0c] text-white flex items-center px-16 py-12">
-      <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-12">
+      <div className="w-full mx-12 flex items-center justify-around gap-12">
         <div className="flex-1 flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <div className="w-8 h-0.5 bg-[#a57f15] dark:bg-[#c9a84c]" />
@@ -21,23 +21,29 @@ const Homepage = () => {
             </h1>
           </div>
 
-          <p className="cormorant-garamond text-sm font-mono text-gray-800 dark:text-gray-400 tracking-widest border-b border-gray-700 pb-4">
+          <p className="cormorant-garamond text-sm font-extrabold text-gray-800 dark:text-gray-400 tracking-widest border-b border-gray-700 pb-4">
             // Junior Full-Stack Developer & Technical Support
           </p>
 
-          <p className="text-gray-700 dark:text-gray-300 cormorant-garamond text-base leading-relaxed max-w-md font-mono">
+          <p className="text-gray-700 dark:text-gray-300 cormorant-garamond text-base leading-relaxed max-w-md font-semibold">
             New to the field but passionate about growing. I love picking up new
             technologies, building small projects, and learning from every
             mistake along the way.
           </p>
 
           <div className="flex items-center gap-6 mt-2">
-            <button className="px-6 py-3 bg-[#a57f15] hover:bg-[#c2951a] dark:bg-[#c9a84c] text-black text-xs tracking-[0.2em] uppercase font-bold dark:hover:bg-[#b8943d] transition-colors cursor-pointer">
+            <a
+              href="/project"
+              className="px-6 py-3 bg-[#a57f15] hover:bg-[#c2951a] dark:bg-[#c9a84c] text-black text-xs tracking-[0.2em] uppercase font-bold dark:hover:bg-[#b8943d] transition-colors cursor-pointer"
+            >
               View My Work
-            </button>
-            <button className="text-xs tracking-[0.2em] uppercase text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors flex items-center gap-2 cursor-pointer">
+            </a>
+            <a
+              href="/contact"
+              className="text-xs tracking-[0.2em] uppercase text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
+            >
               Get in Touch <span>↗</span>
-            </button>
+            </a>
           </div>
         </div>
 
