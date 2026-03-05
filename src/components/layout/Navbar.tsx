@@ -10,7 +10,7 @@ const Navbar = ({
   return (
     <nav className="w-full h-24 sticky top-0 bg-zinc-200 dark:bg-transparent flex items-center justify-between p-6">
       <h1 className="text-sm font-mono mx-4 uppercasejetbrains-mono text-black dark:text-[#c9a84c]">
-        Insc<span className="">X</span> // Junior Full-Stack
+        InscX // Junior Full-Stack
       </h1>
       <div className="flex flex-row gap-4">
         <a

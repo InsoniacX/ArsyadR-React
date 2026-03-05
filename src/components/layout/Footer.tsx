@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="bg-zinc-400 text-black font-bold dark:bg-zinc-900 dark:text-white py-4">
       <div className="container mx-auto text-center jetbrains-mono text-sm flex justify-between">
-        <p>&copy; 2024 Arsyad Rianda Putra - All rights reserved.</p>
+        <p>&copy; 2026 Arsyad Rianda Putra - All rights reserved.</p>
         <div className="flex gap-4 text-center jetbrains-mono">
           <a
             href="https://github.com/InsoniacX"

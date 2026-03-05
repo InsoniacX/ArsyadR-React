@@ -1,5 +1,3 @@
-import Hero from "../assets/download.jpg";
-
 const Homepage = () => {
   return (
     <section className="flex-1 bg-[#fafafc] dark:bg-[#0a0a0c] text-white flex items-center px-16 py-12">
@@ -54,7 +52,7 @@ const Homepage = () => {
 
             <div className="w-full aspect-3/4 bg-[#1a1a1f] flex flex-col items-center justify-center gap-3">
               <img
-                src={Hero}
+                src="/download.jpg"
                 alt="Profile"
                 className="border-4 border-[#a57f15] dark:border-[#c9a84c]"
               />
