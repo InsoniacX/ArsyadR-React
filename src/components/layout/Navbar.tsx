@@ -12,7 +12,7 @@ const Navbar = ({
       <h1 className="text-sm font-mono mx-4 uppercasejetbrains-mono text-black dark:text-[#c9a84c]">
         InscX // Junior Full-Stack
       </h1>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-4 absolute left-1/2 -translate-x-1/2">
         <a
           href="/"
           className="text-gray-800 jetbrains-mono dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-100 transition-colors"

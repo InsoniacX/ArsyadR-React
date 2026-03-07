@@ -9,7 +9,7 @@ const About = () => {
         <div className="w-full bg-[#c9a84c] h-px"></div>
       </div>
       <div className="w-full mx-12 flex items-center justify-around">
-        <div className="flex-1 flex flex-col gap-6 items-center">
+        <div className="flex flex-col gap-6 items-center">
           <p className="text-gray-700 dark:text-gray-300 cormorant-garamond text-lg leading-relaxed max-w-md font-semibold">
             I'm a <b>Junior Full-Stack Developer</b> with a passion for learning
             and growth. I enjoy exploring new technologies, building projects,
@@ -24,7 +24,7 @@ const About = () => {
             the world of <b>Software Development</b>.
           </p>
         </div>
-        <div className="flex-1 flex flex-col items-center relative">
+        <div className="flex flex-col items-center relative">
           <div className="w-full h-1/4 relative cormorant-garamond border-gray-900 border-s-2 my-3 py-4 px-4">
             <h2 className="text-xl jetbrains-mono font-bold ">Location</h2>
             <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
