@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { Navbar, Footer } from "@/components/layout";
+import { Navbar, Footer } from "@/components/Layout";
 import { AppRoutes } from "@/router";
 import { DarkMode } from "@/hooks";
 
