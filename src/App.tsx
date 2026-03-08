@@ -1,10 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 import { Navbar, Footer } from "@/components/layout";
 import { AppRoutes } from "@/router";
-import { useDarkMode } from "@/hooks/useDarkMode";
+import { DarkMode } from "@/hooks";
 
 export default function App() {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { isDarkMode, toggleDarkMode } = DarkMode();
 
   return (
     <BrowserRouter>

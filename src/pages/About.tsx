@@ -28,7 +28,10 @@ const About = () => {
           <div className="w-full h-1/4 relative cormorant-garamond border-gray-900 border-s-2 my-3 py-4 px-4">
             <h2 className="text-xl jetbrains-mono font-bold ">Location</h2>
             <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
-              Jakarta, Indonesia
+              Bandung, Indonesia
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
+              Kediri, Indonesia
             </p>
           </div>
           <div className="w-full h-1/4 relative cormorant-garamond border-gray-900 border-s-2 my-3 py-4 px-4">
@@ -51,12 +54,6 @@ const About = () => {
               Indonesia, English
             </p>
           </div>
-          {/* <div className="w-full h-1/4 relative cormorant-garamond border-gray-900 border-s-2 my-3 py-4 px-4">
-            <h2 className="text-xl jetbrains-mono font-bold ">Location</h2>
-            <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
-              Jakarta, Indonesia
-            </p>
-          </div> */}
         </div>
       </div>
     </section>
