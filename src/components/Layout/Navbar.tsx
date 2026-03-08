@@ -9,7 +9,7 @@ const Navbar = ({
   isDarkMode: boolean;
   toggleDarkMode: () => void;
 }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
 
   const navLinks = [
     { href: "/", label: "Home" },
