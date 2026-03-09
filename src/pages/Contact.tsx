@@ -60,7 +60,7 @@ const TerminalContact = () => {
 
         <div
           ref={bodyRef}
-          className="px-11 pt-9 pb-11 min-h-170 overflow-y-auto"
+          className="px-11 pt-9 pb-11 min-h-100 md:min-h-150 overflow-y-auto"
           style={{ scrollbarWidth: "none" }}
         >
           {visibleLines.map((line) => {

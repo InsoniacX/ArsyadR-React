@@ -13,10 +13,10 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`stagger-child group relative overflow-hidden border dark:border-white/10 border-black/10
-        bg-white dark:bg-[#0f0f11]
-        transition-all duration-500
-        ${featured ? "md:col-span-2 md:row-span-2" : ""}
+      className={`stagger-child group relative overflow-hidden border border-white/10 dark:border-white/10 hover:border-black/10
+  bg-white dark:bg-[#0f0f11]
+  transition-all duration-500
+  ${featured ? "md:col-span-2" : ""}
       `}
       style={{
         opacity: 0,
@@ -28,9 +28,7 @@ const ProjectCard = ({
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image */}
-      <div
-        className={`relative overflow-hidden ${featured ? "h-full min-h-65" : "h-44"}`}
-      >
+      <div className={`relative overflow-hidden ${featured ? "h-64" : "h-44"}`}>
         <img
           src={project.imgSrc}
           alt={project.title}

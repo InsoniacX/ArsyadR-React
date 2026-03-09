@@ -18,7 +18,7 @@ const Navbar = ({
   ];
 
   return (
-    <nav className="w-full h-24 sticky top-0 z-50 bg-zinc-200 dark:bg-zinc-950 flex items-center justify-between p-6">
+    <nav className="w-full h-24 fixed top-0 z-50 bg-zinc-200 dark:bg-zinc-950 flex items-center justify-between p-6">
       <h1 className="text-sm font-mono mx-4 uppercase jetbrains-mono text-black dark:text-[#c9a84c]">
         InscX // Junior Full-Stack
       </h1>

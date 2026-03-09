@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { DELAYS, SEQUENCE } from "@/data";
+import { SEQUENCE } from "@/data";
 import type { TerminalLine } from "@/types";
+
+const OUTPUT_DELAY = 80;
+const CMD_PAUSE = 400;
 
 interface UseTerminalSequenceReturn {
   visibleLines: TerminalLine[];
@@ -14,37 +17,73 @@ const useTerminalSequence = (): UseTerminalSequenceReturn => {
   const [currentCmdIndex, setCurrentCmdIndex] = useState<number | null>(null);
   const [formVisible, setFormVisible] = useState(false);
 
+  // Queue of remaining steps to process
+  const [stepQueue, setStepQueue] = useState<number[]>(
+    SEQUENCE.map((_, i) => i),
+  );
+  const [waitingForCmd, setWaitingForCmd] = useState(false);
+  const [pendingForm, setPendingForm] = useState(false);
+
+  // Process next step in queue
   useEffect(() => {
-    const timeouts: ReturnType<typeof setTimeout>[] = [];
+    // Don't proceed if waiting for a cmd to finish typing
+    if (waitingForCmd) return;
+    // Nothing left in queue
+    if (stepQueue.length === 0) return;
 
-    SEQUENCE.forEach((step, i) => {
-      const delay = DELAYS[i];
-      const t = setTimeout(() => {
-        const line: TerminalLine = { ...step, id: i };
+    const [current, ...rest] = stepQueue;
+    const step = SEQUENCE[current];
 
+    const t = setTimeout(
+      () => {
         if (step.type === "cmd") {
-          setCurrentCmdIndex(i);
+          // Start typing — pause queue until typing is done
+          setCurrentCmdIndex(current);
+          setWaitingForCmd(true);
+          setStepQueue(rest);
         } else if (step.type === "form") {
-          setFormVisible(true);
+          setPendingForm(true);
+          setStepQueue(rest);
+        } else if (step.type === "blank" || step.type === "divider") {
+          setVisibleLines((prev) => [...prev, { ...step, id: current }]);
+          setStepQueue(rest);
         } else {
-          setVisibleLines((prev) => [...prev, line]);
+          // output line
+          setVisibleLines((prev) => [...prev, { ...step, id: current }]);
+          setStepQueue(rest);
         }
-      }, delay);
+      },
+      step.type === "cmd" ? CMD_PAUSE : OUTPUT_DELAY,
+    );
 
-      timeouts.push(t);
-    });
-
-    return () => timeouts.forEach(clearTimeout);
-  }, []);
+    return () => clearTimeout(t);
+  }, [stepQueue, waitingForCmd]);
 
   const handleCmdDone = (id: number) => {
     const step = SEQUENCE[id];
+
     setVisibleLines((prev) => [
       ...prev,
       { id, type: "cmd", prompt: step.prompt, text: step.text, typed: true },
     ]);
+
     setCurrentCmdIndex(null);
+    setWaitingForCmd(false); // ← this unblocks the queue to continue
   };
+
+  // Handle form visibility separately in a useEffect
+  useEffect(() => {
+    if (!pendingForm) return;
+    if (waitingForCmd) return;
+    if (stepQueue.length > 0) return;
+
+    const t = setTimeout(() => {
+      setFormVisible(true);
+      setPendingForm(false);
+    }, 400);
+
+    return () => clearTimeout(t);
+  }, [pendingForm, waitingForCmd, stepQueue]);
 
   return { visibleLines, currentCmdIndex, formVisible, handleCmdDone };
 };
