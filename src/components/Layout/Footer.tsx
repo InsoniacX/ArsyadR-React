@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-zinc-400 text-black font-bold dark:bg-zinc-900 dark:text-white py-4">
       <div className="container mx-auto text-center jetbrains-mono text-sm flex flex-col md:flex-row items-center md:justify-between gap-6">
         <p>&copy; 2026 Arsyad Rianda Putra - All rights reserved.</p>
-        <div className="flex flex-col md:flex-row gap-4 text-center jetbrains-mono">
+        <div className="flex flex-row gap-4 text-center jetbrains-mono">
           <a
             href="https://github.com/InsoniacX"
             className="text-gray-700 hover:text-gray-900 dark:text-white hover:dark:text-white/60 font-extrabold uppercase"
