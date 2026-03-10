@@ -36,7 +36,7 @@ const Projects = () => {
           <ProjectCard
             key={index}
             project={project}
-            featured={index === 0} // first card is featured (spans 2 cols)
+            featured={index === 0}
           />
         ))}
       </div>
